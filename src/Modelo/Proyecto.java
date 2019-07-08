@@ -5,35 +5,47 @@
  */
 package Modelo;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.*;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Daniela Chaux
  */
-public class Proyecto {
-    private List<Tarea> tareasNT;
-    private Persona persona;
+//@Entity
+public class Proyecto implements Serializable{
+    private String nombre;
+    private List<Tarea> tareas;
+    private List<Usuario> usuarios;
 
-    public Proyecto(List<Tarea> tareasNT, Persona persona) {
-        this.tareasNT = tareasNT;
-        this.persona = persona;
+    public Proyecto(String nombre) {
+        this.nombre = nombre;
+        this.usuarios = new ArrayList();
+        this.tareas = new ArrayList(); 
     }
 
-    public List<Tarea> getTareasNT() {
-        return tareasNT;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTareasNT(List<Tarea> tareasNT) {
-        this.tareasNT = tareasNT;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Persona getPersona() {
-        return persona;
+    public List<Tarea> getTareas() {
+        return tareas;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
+    public void setTareas(List<Tarea> tareas) {
+        this.tareas = tareas;
     }
-    
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> persona) {
+        this.usuarios = persona;
+    }
 }

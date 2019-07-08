@@ -5,21 +5,22 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Daniela Chaux
  */
-class Persona {
+public class Usuario {
     private String nombre;
     private Long id;
     private List<Proyecto> proyectos;
 
-    public Persona(String nombre, Long id, List<Proyecto> proyectos) {
+    public Usuario(String nombre, Long id) {
         this.nombre = nombre;
         this.id = id;
-        this.proyectos = proyectos;
+        this.proyectos = new ArrayList();
     }
 
     public String getNombre() {
@@ -29,7 +30,6 @@ class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public Long getId() {
         return id;
     }

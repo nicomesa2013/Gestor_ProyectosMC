@@ -12,40 +12,11 @@ import java.util.List;
  *
  * @author Daniela Chaux
  */
-class Tarea {
-    private Date contador;
-    private List<Receso> receso;
-    private boolean estado;
-
-    public Tarea(Date contador, List<Receso> receso, boolean estado) {
-        this.contador = contador;
-        this.receso = receso;
-        this.estado = estado;
-    }
-
-    public Date getContador() {
-        return contador;
-    }
-
-    public void setContador(Date contador) {
-        this.contador = contador;
-    }
-
-    public List<Receso> getReceso() {
-        return receso;
-    }
-
-    public void setReceso(List<Receso> receso) {
-        this.receso = receso;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-    
+public class Tarea {
+    private String nombre;
+    private List<Cronometro> contador;//Tiempo de cada perso 
+    private List<RegistroSuspension> registroSuspensions;
+    private List<RegistroTrabajo> registroTrabajo;
+    private boolean estado; 
     
 } 

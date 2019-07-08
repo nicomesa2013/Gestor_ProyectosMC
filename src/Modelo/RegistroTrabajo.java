@@ -5,25 +5,18 @@
  */
 package Modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Daniela Chaux
  */
-class Receso {
-    private Suspension suspension;
+public class RegistroTrabajo {
     private String descripcion;
+    private Cronometro contador;
 
-    public Receso(Suspension suspension, String descripcion) {
-        this.suspension = suspension;
+    public RegistroTrabajo(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Suspension getSuspension() {
-        return suspension;
-    }
-
-    public void setSuspension(Suspension suspension) {
-        this.suspension = suspension;
     }
 
     public String getDescripcion() {
@@ -32,5 +25,19 @@ class Receso {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }        
+    }
+
+    public Cronometro getContador() {
+        return contador;
+    }
+
+    public void setContador(Cronometro contador) {
+        this.contador = contador;
+    }
+    
+    
+    
+    
+    
+    
 }
