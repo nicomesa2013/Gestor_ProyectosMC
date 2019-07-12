@@ -5,7 +5,8 @@
  */
 package Modelo;
 
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
 
 /**
  *
@@ -13,11 +14,13 @@ import java.util.Date;
  */
 public class Cronometro {
     private Usuario persona;
-    private Date inicio;
-    private Date fin;
+    private DateTime inicio;
+    private DateTime fin;
+    private Minutes total;
 
     public Cronometro(Usuario persona) {
         this.persona = persona;
+        
     }
 
     public Usuario getPersona() {
@@ -28,21 +31,27 @@ public class Cronometro {
         this.persona = persona;
     }
 
-    public Date getInicio() {
+    public DateTime getInicio() {
         return inicio;
     }
 
-    public void setInicio(Date inicio) {
+    public void setInicio(DateTime inicio) {
         this.inicio = inicio;
     }
 
-    public Date getFin() {
+    public DateTime getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(DateTime fin) {
         this.fin = fin;
     }
-    
-    
+
+    public Minutes getTotal() {
+        return total;
+    }
+
+    public void setTotal(Minutes total) {
+        this.total = total;
+    }
 }

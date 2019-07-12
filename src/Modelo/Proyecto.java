@@ -8,17 +8,29 @@ package Modelo;
 import java.io.Serializable;
 import java.util.*;
 import javax.persistence.Entity;
+import javax.persistence.*;
 
 /**
  *
  * @author Daniela Chaux
  */
-//@Entity
+@Entity
+@Table(name = "projects")
 public class Proyecto implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "project_name", nullable = false)
     private String nombre;
+    
+    @ManyToOne
     private List<Tarea> tareas;
+    @ManyToOne
     private List<Usuario> usuarios;
-
+    public Proyecto(){
+        
+    }
     public Proyecto(String nombre) {
         this.nombre = nombre;
         this.usuarios = new ArrayList();

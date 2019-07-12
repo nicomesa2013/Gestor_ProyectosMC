@@ -6,6 +6,8 @@
 package Modelo;
 
 import java.util.*;
+import org.joda.time.DateTime;
+import org.joda.time.Minutes;
 
 /**
  *
@@ -13,11 +15,12 @@ import java.util.*;
  */
 public class RegistroSuspension {
     private String tipoSuspesion;
-    private Date inicio;
-    private Date fin;
+    private DateTime inicio;
+    private DateTime fin;
+    private Minutes contador;
     private Usuario usuario;
 
-    public RegistroSuspension(Date inicio, Usuario usuario) {
+    public RegistroSuspension(DateTime inicio, Usuario usuario) {
         this.inicio = inicio;
         this.usuario = usuario;
     }
@@ -30,19 +33,19 @@ public class RegistroSuspension {
         this.tipoSuspesion = tipoSuspesion;
     }
 
-    public Date getInicio() {
+    public DateTime getInicio() {
         return inicio;
     }
 
-    public void setInicio(Date inicio) {
+    public void setInicio(DateTime inicio) {
         this.inicio = inicio;
     }
 
-    public Date getFin() {
+    public DateTime getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(DateTime fin) {
         this.fin = fin;
     }
 
@@ -53,8 +56,19 @@ public class RegistroSuspension {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public Minutes getContador() {
+        return contador;
+    }
+
+    public void setContador(Minutes contador) {
+        this.contador = contador;
+    }
+
     
     
     
     
+    
+        
 }

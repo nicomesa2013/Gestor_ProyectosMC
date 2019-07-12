@@ -16,11 +16,15 @@ public class Usuario {
     private String nombre;
     private Long id;
     private List<Proyecto> proyectos;
+    private List<RegistroSuspension> registroSuspensiones;
+    private List<RegistroTrabajo> registroTrabajos;
 
     public Usuario(String nombre, Long id) {
         this.nombre = nombre;
         this.id = id;
         this.proyectos = new ArrayList();
+        this.registroSuspensiones = new ArrayList<>();
+        this.registroTrabajos = new ArrayList();
     }
 
     public String getNombre() {
@@ -44,6 +48,22 @@ public class Usuario {
 
     public void setProyectos(List<Proyecto> proyectos) {
         this.proyectos = proyectos;
+    }
+
+    public List<RegistroSuspension> getRegistroSuspensiones() {
+        return registroSuspensiones;
+    }
+
+    public void setRegistroSuspensions(List<RegistroSuspension> registroSuspensiones) {
+        this.registroSuspensiones = registroSuspensiones;
+    }
+
+    public List<RegistroTrabajo> getRegistroTrabajos() {
+        return registroTrabajos;
+    }
+
+    public void setRegistroTrabajos(List<RegistroTrabajo> registroTrabajos) {
+        this.registroTrabajos = registroTrabajos;
     }
     
     
