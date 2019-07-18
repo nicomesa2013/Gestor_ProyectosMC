@@ -5,8 +5,9 @@
  */
 package Modelo;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -15,8 +16,9 @@ import java.util.List;
 public class Tarea {
     private String nombre;
     private String descripcion;
+    @ManyToOne
     private Proyecto proyecto;
-    private List<Cronometro> contador;//Tiempo de cada perso 
+    private List<Cronometro> tiempo;//Tiempo de cada perso 
     private boolean estado; 
 
     public Tarea(String nombre, String descripcion, Proyecto proyecto) {
@@ -24,6 +26,7 @@ public class Tarea {
         this.descripcion = descripcion;
         this.estado = false;
         this.proyecto = proyecto;
+        this.tiempo = new ArrayList();
     }
 
     public String getNombre() {
@@ -42,12 +45,12 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public List<Cronometro> getContador() {
-        return contador;
+    public List<Cronometro> getTiempo() {
+        return tiempo;
     }
 
-    public void setContador(List<Cronometro> contador) {
-        this.contador = contador;
+    public void setTiempo(List<Cronometro> contador) {
+        this.tiempo = contador;
     }
     public boolean isEstado() {
         return estado;
@@ -56,4 +59,13 @@ public class Tarea {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+    
 } 

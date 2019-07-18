@@ -24,9 +24,9 @@ public class Proyecto implements Serializable{
     @Column(name = "project_name", nullable = false)
     private String nombre;
     
-    @ManyToOne
+    @OneToMany(mappedBy = "proyecto")
     private List<Tarea> tareas;
-    @ManyToOne
+    @ManyToMany(mappedBy = "proyectos")
     private List<Usuario> usuarios;
     public Proyecto(){
         
@@ -52,7 +52,13 @@ public class Proyecto implements Serializable{
     public void setTareas(List<Tarea> tareas) {
         this.tareas = tareas;
     }
-
+    public Usuario getUsuario(Usuario usuario){
+        for (int i = 0; i < usuarios.size(); i++) {
+            if(usuario.equals(usuarios.get(i)))
+                return usuarios.get(i);
+        }
+        return null;
+    }
     public List<Usuario> getUsuarios() {
         return usuarios;
     }

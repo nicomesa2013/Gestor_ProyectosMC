@@ -7,6 +7,7 @@ package Modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ManyToMany;
 
 /**
  *
@@ -15,9 +16,10 @@ import java.util.List;
 public class Usuario {
     private String nombre;
     private Long id;
+    @ManyToMany
     private List<Proyecto> proyectos;
-    private List<RegistroSuspension> registroSuspensiones;
-    private List<RegistroTrabajo> registroTrabajos;
+    private List<Registro> registroSuspensiones;
+    private List<Registro> registroTrabajos;
 
     public Usuario(String nombre, Long id) {
         this.nombre = nombre;
@@ -50,19 +52,19 @@ public class Usuario {
         this.proyectos = proyectos;
     }
 
-    public List<RegistroSuspension> getRegistroSuspensiones() {
+    public List<Registro> getRegistroSuspensiones() {
         return registroSuspensiones;
     }
 
-    public void setRegistroSuspensions(List<RegistroSuspension> registroSuspensiones) {
+    public void setRegistroSuspensions(List<Registro> registroSuspensiones) {
         this.registroSuspensiones = registroSuspensiones;
     }
 
-    public List<RegistroTrabajo> getRegistroTrabajos() {
+    public List<Registro> getRegistroTrabajos() {
         return registroTrabajos;
     }
 
-    public void setRegistroTrabajos(List<RegistroTrabajo> registroTrabajos) {
+    public void setRegistroTrabajos(List<Registro> registroTrabajos) {
         this.registroTrabajos = registroTrabajos;
     }
     
