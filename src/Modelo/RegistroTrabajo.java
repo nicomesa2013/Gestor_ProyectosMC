@@ -5,6 +5,9 @@
  */
 package Modelo;
 
+import java.io.Serializable;
+import javax.persistence.*;
+import javax.persistence.Id;
 import org.joda.time.DateTime;
 
 
@@ -14,8 +17,11 @@ import org.joda.time.DateTime;
  *
  * @author Daniela Chaux
  */
-public class RegistroTrabajo extends Registro{
+@Entity
+public class RegistroTrabajo extends Registro implements Serializable{
+    @ManyToOne
     private Tarea tarea;
+    @ManyToOne
     private Proyecto proyecto;
 
     public RegistroTrabajo(DateTime inicio, Usuario usuario, Tarea tarea, Proyecto proyecto) {

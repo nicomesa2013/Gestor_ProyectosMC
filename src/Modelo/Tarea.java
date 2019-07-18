@@ -7,18 +7,32 @@ package Modelo;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  *
  * @author Daniela Chaux
  */
+@Entity
+@Table (name = "tareas")
 public class Tarea {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "nombre_tarea", nullable = false)
     private String nombre;
+    
+    @Column(name = "descripcion_tarea")
     private String descripcion;
+    
     @ManyToOne
     private Proyecto proyecto;
+    
+    @OneToMany
     private List<Cronometro> tiempo;//Tiempo de cada perso 
+    
+    @Column(name = "estado_tarea")
     private boolean estado; 
 
     public Tarea(String nombre, String descripcion, Proyecto proyecto) {

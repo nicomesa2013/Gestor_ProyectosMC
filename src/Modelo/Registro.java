@@ -5,19 +5,34 @@
  */
 package Modelo;
 
+import java.io.Serializable;
+import javax.persistence.*;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
-import org.joda.time.Minutes;
+
 
 /**
  *
  * @author Daniela Chaux
  */
-public abstract class Registro{
+@Entity
+public abstract class Registro implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    @Column
     private String descripcion;
+    
+    @Column
     private DateTime inicio;
+    
+    @Column
     private DateTime fin;
+    
+    @Column
     private Duration contador;
+    
+    @ManyToOne
     private Usuario usuario;
 
     public Registro(DateTime inicio, Usuario usuario) {

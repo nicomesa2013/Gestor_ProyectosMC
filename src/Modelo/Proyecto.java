@@ -26,8 +26,10 @@ public class Proyecto implements Serializable{
     
     @OneToMany(mappedBy = "proyecto")
     private List<Tarea> tareas;
+    
     @ManyToMany(mappedBy = "proyectos")
     private List<Usuario> usuarios;
+    
     public Proyecto(){
         
     }
